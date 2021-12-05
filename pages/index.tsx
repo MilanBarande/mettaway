@@ -16,7 +16,6 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Welcome to Mettaway
         </h1>
-        test
 
         
       </main>
