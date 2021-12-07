@@ -82,14 +82,7 @@ $shadows-big:    multiple-box-shadow(100);
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-.glitch{
-  color:white;
-  font-size:100px;
-  position:relative;
-  width:400px;
-  margin:0 auto;
+  width: 100%;
 }
 
 @keyframes noise-anim{
@@ -107,6 +100,22 @@ $shadows-big:    multiple-box-shadow(100);
     #{percentage($i*(calc(1 / $steps)))}{
       clip:rect(random(100)+px,9999px,random(100)+px,0);
     }
+  }
+}
+
+.glitch{
+  color: white;
+  font-size: 100px;
+  position: relative;
+  width: 400px;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .glitch {
+    font-size: 40px;
+    width: unset;
   }
 }
 
