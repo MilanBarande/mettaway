@@ -13,6 +13,8 @@ $shadows-small:  multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big:    multiple-box-shadow(100);
 
+$mobile-max-width: 800px;
+
 .stars {
   width: 1px;
   height: 1px;
@@ -109,7 +111,7 @@ $shadows-big:    multiple-box-shadow(100);
   font-weight: 400;
   font-size: 100px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: $mobile-max-width) {
     font-size: 50px;
   }
   
@@ -128,10 +130,10 @@ $shadows-big:    multiple-box-shadow(100);
   font-size: 50px;
   position: relative;
   width: unset;
-  margin-top: 18rem;
-  margin-left: 8px;
+  margin-top: 25rem;
+  margin-left: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: $mobile-max-width) {
     font-size: 30px;
     margin-top: 14rem;
     margin-left: 4px;
@@ -175,13 +177,13 @@ $sphere-size-mobile: 45vmin;
 
 .sphere {
   @include absolutely();
-  margin-top: 14rem;
+  margin-top: 17rem;
   width: $sphere-size-desktop;
   height: $sphere-size-desktop;
   animation: spinSphere 20s infinite linear;
   transform-style: preserve-3d;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: $mobile-max-width) {
     width: $sphere-size-mobile;
     height: $sphere-size-mobile;
     margin-top: 9rem;
@@ -194,7 +196,7 @@ $sphere-size-mobile: 45vmin;
     border-radius: 50%;
     overflow: hidden;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: $mobile-max-width) {
       width: $sphere-size-mobile;
       height: $sphere-size-mobile;
     }
