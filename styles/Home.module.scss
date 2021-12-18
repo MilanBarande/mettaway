@@ -203,7 +203,7 @@ $sphere-size-mobile: 45vmin;
   @for $i from 1 through 36 {
     [class$="#{$i}"] {
       transform: rotateY($i * 2deg) rotateX($i*2deg) rotateZ($i * 3deg);
-      box-shadow:0 0 (1px + ($i * 2)) rgba((255 - ($i * 2)),(170 - round($i * .5)),(45 * round($i / 3)), 0.1), inset 0 0 (1px + ($i * 2)) rgba((255 - ($i * 2)),(170 - round($i * .5)),(45 * round($i / 3)), 0.1);
+      box-shadow:0 0 (1px + ($i * 2)) rgba((255 - ($i * 2)),(170 - round($i * .5)),(45 * round(calc($i / 3))), 0.1), inset 0 0 (1px + ($i * 2)) rgba((255 - ($i * 2)),(170 - round($i * .5)),(45 * round(calc($i / 3))), 0.1);
     }
   } 
 }
