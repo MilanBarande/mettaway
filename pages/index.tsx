@@ -1,13 +1,21 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useEffect } from 'react';
 import { range } from '../helpers';
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss';
 
 const { stars, stars2, stars3, main, title, title__letter, sphere, glitch } = styles;
 
 const getRings = () => range(0, 36).map(index => <div key={index} className={`ring#${index}`} />)
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    window.onload = function () {
+      let myiFrame = document.getElementById("soundcloud-playlist");
+      let doc = myiFrame?.ownerDocument?.body?.innerHTML;
+      doc = doc + '<style>.title__h2Text {color: red;}</style>';
+    }
+  })
   return (
     <>
       <Head>
@@ -35,15 +43,7 @@ const Home: NextPage = () => {
           {getRings()}
         </div>
         <h2 className={glitch} data-text="recharging...">recharging...</h2>
-        {/* <iframe 
-          width="80%" 
-          height="300" 
-          scrolling="no" 
-          frameBorder="no" 
-          allow="autoplay" 
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1342279549&color=%23440bd4&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
-        />
-        <div style={{fontSize: '10px',  color: '#cccccc', lineBreak: 'anywhere', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}} /> */}
+        {/* <iframe id='soundcloud-playlist' width="80%" height="350" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1356370978&color=%23440bd4&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" /> */}
       </main>
     </>
   )
