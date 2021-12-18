@@ -128,11 +128,13 @@ $shadows-big:    multiple-box-shadow(100);
   font-size: 70px;
   position: relative;
   width: unset;
-  margin: 18rem auto 40px auto;
+  margin-top: 18rem;
+  margin-left: 8px;
 
   @media screen and (max-width: 1024px) {
     font-size: 30px;
-    margin-top: 12rem;
+    margin-top: 14rem;
+    margin-left: 4px;
   }
 }
 
@@ -182,7 +184,7 @@ $sphere-size-mobile: 45vmin;
   @media screen and (max-width: 1024px) {
     width: $sphere-size-mobile;
     height: $sphere-size-mobile;
-    margin-top: 8rem;
+    margin-top: 9rem;
   }
 
   [class^="ring"] {

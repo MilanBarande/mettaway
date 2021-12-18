@@ -36,8 +36,8 @@ const Home: NextPage = () => {
         </div>
         <h2 className={glitch} data-text="recharging...">recharging...</h2>
         {/* <iframe 
-          width="50%" 
-          height="450" 
+          width="80%" 
+          height="300" 
           scrolling="no" 
           frameBorder="no" 
           allow="autoplay" 
