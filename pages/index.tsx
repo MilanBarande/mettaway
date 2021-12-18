@@ -1,7 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import { range } from '../helpers';
 import styles from '../styles/Home.module.scss'
+
+const { stars, stars2, stars3, main, title, title__letter, sphere, glitch } = styles;
+
+const getRings = () => range(0, 36).map(index => <div key={index} className={`ring#${index}`} />)
 
 const Home: NextPage = () => {
   return (
@@ -12,22 +16,25 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.stars}/>
-      <div className={styles.stars2} />
-      <div className={styles.stars3} />
+      <div className={stars}/>
+      <div className={stars2} />
+      <div className={stars3} />
   
-      <main className={styles.main}>
-        <div className={styles.title}>
-          <span className={styles.title__letter}>M</span>
-          <span className={styles.title__letter}>e</span>
-          <span className={styles.title__letter}>t</span>
-          <span className={styles.title__letter}>t</span>
-          <span className={styles.title__letter}>a</span>
-          <span className={styles.title__letter}>w</span>
-          <span className={styles.title__letter}>a</span>
-          <span className={styles.title__letter}>y</span>
+      <main className={main}>
+        <div className={title}>
+          <span className={title__letter}>M</span>
+          <span className={title__letter}>e</span>
+          <span className={title__letter}>t</span>
+          <span className={title__letter}>t</span>
+          <span className={title__letter}>a</span>
+          <span className={title__letter}>w</span>
+          <span className={title__letter}>a</span>
+          <span className={title__letter}>y</span>
         </div>
-        <h2 className={styles.glitch} data-text="Recharging...">Recharging...</h2>
+        <div className={sphere}>
+          {getRings()}
+        </div>
+        <h2 className={glitch} data-text="recharging...">recharging...</h2>
         {/* <iframe 
           width="50%" 
           height="450" 

@@ -77,11 +77,10 @@ $shadows-big:    multiple-box-shadow(100);
 }
 
 .main {
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100%;
@@ -110,6 +109,9 @@ $shadows-big:    multiple-box-shadow(100);
   font-weight: 400;
   font-size: 100px;
 
+  @media screen and (max-width: 1024px) {
+    font-size: 50px;
+  }
   
   &__letter:nth-child(n) {
     color:#e92efb;
@@ -122,18 +124,15 @@ $shadows-big:    multiple-box-shadow(100);
 
 .glitch {
   font-family: 'Space Mono', monospace;
-  color: #440bd4;
+  color: white;
   font-size: 70px;
   position: relative;
   width: unset;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
+  margin: 18rem auto 40px auto;
 
-
-@media screen and (max-width: 1024px) {
-  .glitch {
-    font-size: 40px;
+  @media screen and (max-width: 1024px) {
+    font-size: 30px;
+    margin-top: 12rem;
   }
 }
 
@@ -141,9 +140,9 @@ $shadows-big:    multiple-box-shadow(100);
   content: attr(data-text);
   position: absolute;
   left: 2px;
-  text-shadow: -1px 0 white;
+  text-shadow: -1px 0 #e92efb;
   top: 0;
-  color: #440bd4;
+  color: white;
   background: transparent;
   overflow: hidden;
   clip: rect(0,900px,0,0); 
@@ -154,11 +153,64 @@ $shadows-big:    multiple-box-shadow(100);
   content:attr(data-text);
   position:absolute;
   left:-2px;
-  text-shadow:1px 0 #ca28db; 
+  text-shadow:1px 0 rgba(254,32,120,255); 
   top:0;
-  color:#440bd4;
+  color:white;
   background:transparent;
   overflow:hidden;
   clip:rect(0,900px,0,0); 
   animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+$sphere-size-desktop: 25vmin;
+$sphere-size-mobile: 45vmin;
+
+@mixin absolutely {
+  position: absolute;
+  top:0;right:0;bottom:0;left:0;
+  margin: 0 auto;
+}
+
+.sphere {
+  @include absolutely();
+  margin-top: 14rem;
+  width: $sphere-size-desktop;
+  height: $sphere-size-desktop;
+  animation: spinSphere 20s infinite linear;
+  transform-style: preserve-3d;
+
+  @media screen and (max-width: 1024px) {
+    width: $sphere-size-mobile;
+    height: $sphere-size-mobile;
+    margin-top: 8rem;
+  }
+
+  [class^="ring"] {
+    @include absolutely();
+    width: $sphere-size-desktop;
+    height: $sphere-size-desktop;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @media screen and (max-width: 1024px) {
+      width: $sphere-size-mobile;
+      height: $sphere-size-mobile;
+    }
+  }
+
+  @for $i from 1 through 36 {
+    [class$="#{$i}"] {
+      transform: rotateY($i * 2deg) rotateX($i*2deg) rotateZ($i * 3deg);
+      box-shadow:0 0 (1px + ($i * 2)) rgba((255 - ($i * 2)),(170 - round($i * .5)),(45 * round($i / 3)), 0.1), inset 0 0 (1px + ($i * 2)) rgba((255 - ($i * 2)),(170 - round($i * .5)),(45 * round($i / 3)), 0.1);
+    }
+  } 
+}
+
+@keyframes spinSphere {
+  from {
+    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateZ(360deg) rotateX(-360deg) rotateZ(360deg);
+  }
 }
