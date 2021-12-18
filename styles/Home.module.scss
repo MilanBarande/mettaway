@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Space+Mono&display=swap');
+
 // n is number of stars required
 @function multiple-box-shadow ($n) {
   $value: '#{random(2000)}px #{random(2000)}px #FFF';
@@ -85,7 +87,7 @@ $shadows-big:    multiple-box-shadow(100);
   width: 100%;
 }
 
-@keyframes noise-anim{
+@keyframes noise-anim {
   $steps:20;
   @for $i from 0 through $steps{
     #{percentage($i*(calc(1 / $steps)))}{
@@ -94,7 +96,7 @@ $shadows-big:    multiple-box-shadow(100);
   }
 }
 
-@keyframes noise-anim-2{
+@keyframes noise-anim-2 {
   $steps:20;
   @for $i from 0 through $steps{
     #{percentage($i*(calc(1 / $steps)))}{
@@ -103,42 +105,58 @@ $shadows-big:    multiple-box-shadow(100);
   }
 }
 
-.glitch{
-  color: white;
+.title {
+  font-family: 'Monoton';
+  font-weight: 400;
   font-size: 100px;
+
+  
+  &__letter:nth-child(n) {
+    color:#e92efb;
+  }
+
+  &__letter:nth-child(2n) {
+    color: rgba(254,32,120,255);
+  }
+}
+
+.glitch {
+  font-family: 'Space Mono', monospace;
+  color: #440bd4;
+  font-size: 70px;
   position: relative;
-  width: 400px;
+  width: unset;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 
 @media screen and (max-width: 1024px) {
   .glitch {
     font-size: 40px;
-    width: unset;
   }
 }
 
-.glitch:after{
+.glitch:after {
   content: attr(data-text);
   position: absolute;
   left: 2px;
-  text-shadow: -1px 0 red;
+  text-shadow: -1px 0 white;
   top: 0;
-  color: white;
+  color: #440bd4;
   background: transparent;
   overflow: hidden;
   clip: rect(0,900px,0,0); 
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
 
-.glitch:before{
+.glitch:before {
   content:attr(data-text);
   position:absolute;
   left:-2px;
-  text-shadow:1px 0 blue; 
+  text-shadow:1px 0 #ca28db; 
   top:0;
-  color:white;
+  color:#440bd4;
   background:transparent;
   overflow:hidden;
   clip:rect(0,900px,0,0); 
