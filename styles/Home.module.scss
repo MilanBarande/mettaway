@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Space+Mono&display=swap');
 
+$purple-pink: #E92EFB;
+$pink: #fe2078;
+$purple: #440ad5;
+$dark-blue: #05015e;
+
 // n is number of stars required
 @function multiple-box-shadow ($n) {
   $value: '#{random(2000)}px #{random(2000)}px #FFF';
@@ -20,7 +25,7 @@ $mobile-max-width: 800px;
   height: 1px;
   background: transparent;
   box-shadow: $shadows-small;
-  animation			: animStar 50s linear infinite;
+  animation: animStar 50s linear infinite;
     
   &:after{
     content: " ";
@@ -38,7 +43,7 @@ $mobile-max-width: 800px;
   height: 2px;
   background: transparent;
   box-shadow: $shadows-medium;
-  animation			: animStar 100s linear infinite;
+  animation: animStar 100s linear infinite;
     
   &:after {
     content: " ";
@@ -56,7 +61,7 @@ $mobile-max-width: 800px;
   height: 3px;
   background: transparent;
   box-shadow: $shadows-big;
-  animation			: animStar 150s linear infinite;
+  animation: animStar 150s linear infinite;
     
   &:after {
     content: " ";
@@ -110,33 +115,32 @@ $mobile-max-width: 800px;
   font-family: 'Monoton';
   font-weight: 400;
   font-size: 100px;
+  filter: drop-shadow(2px 2px 20px $purple-pink);
 
   @media screen and (max-width: $mobile-max-width) {
     font-size: 50px;
   }
   
   &__letter:nth-child(n) {
-    color:#e92efb;
+    color: $purple-pink;
   }
 
   &__letter:nth-child(2n) {
-    color: rgba(254,32,120,255);
+    color: $pink;
   }
 }
 
 .glitch {
   font-family: 'Space Mono', monospace;
-  color: white;
+  color: $purple;
   font-size: 50px;
   position: relative;
   width: unset;
   margin-top: 25rem;
-  margin-left: 10px;
 
   @media screen and (max-width: $mobile-max-width) {
     font-size: 30px;
-    margin-top: 14rem;
-    margin-left: 4px;
+    margin-top: 18rem;
   }
 }
 
@@ -146,7 +150,7 @@ $mobile-max-width: 800px;
   left: 2px;
   text-shadow: -1px 0 #e92efb;
   top: 0;
-  color: white;
+  color: $dark-blue;
   background: transparent;
   overflow: hidden;
   clip: rect(0,900px,0,0); 
@@ -157,13 +161,28 @@ $mobile-max-width: 800px;
   content:attr(data-text);
   position:absolute;
   left:-2px;
-  text-shadow:1px 0 rgba(254,32,120,255); 
+  text-shadow:1px 0 $pink; 
   top:0;
-  color:white;
+  color:$dark-blue;
   background:transparent;
   overflow:hidden;
   clip:rect(0,900px,0,0); 
   animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+.soundcloudLinkContainer {
+  margin-top: 5rem;
+}
+
+.soundcloudLink {
+  font-family: 'Space Mono', monospace;
+  color: $purple-pink;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    color: $pink;
+  }
 }
 
 $sphere-size-desktop: 25vmin;
@@ -186,7 +205,7 @@ $sphere-size-mobile: 45vmin;
   @media screen and (max-width: $mobile-max-width) {
     width: $sphere-size-mobile;
     height: $sphere-size-mobile;
-    margin-top: 9rem;
+    margin-top: 11rem;
   }
 
   [class^="ring"] {
