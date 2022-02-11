@@ -2,8 +2,8 @@ import styles from '../styles/Title.module.scss';
 
 const { title, title__letter } = styles;
 
-const Title = ({style}: {style?: {[key:string]: any}}) => (
-  <div className={title} style={style}>
+const Title = ({className}: {className?: string}) => (
+  <div className={`${title} ${className}`}>
     <span className={title__letter}>M</span>
     <span className={title__letter}>e</span>
     <span className={title__letter}>t</span>
