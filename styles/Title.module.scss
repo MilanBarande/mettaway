@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Space+Mono&display=swap');
+
 $purple-pink: #E92EFB;
 $pink: #fe2078;
 $purple: #440ad5;
@@ -7,7 +9,7 @@ $mobile-max-width: 800px;
 .title {
   font-family: 'Monoton';
   font-weight: 400;
-  font-size: 100px;
+  font-size: 120px;
   filter: drop-shadow(2px 2px 20px $purple-pink);
 
   @media screen and (max-width: $mobile-max-width) {

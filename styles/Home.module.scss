@@ -4,6 +4,7 @@ $purple-pink: #E92EFB;
 $pink: #fe2078;
 $purple: #440ad5;
 $dark-blue: #05015e;
+$mobile-max-width: 800px;
 
 // n is number of stars required
 @function multiple-box-shadow ($n) {
@@ -18,7 +19,6 @@ $shadows-small:  multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big:    multiple-box-shadow(100);
 
-$mobile-max-width: 800px;
 
 .stars {
   width: 1px;

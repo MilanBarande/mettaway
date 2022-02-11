@@ -3,7 +3,7 @@ import Head from 'next/head';
 import HomeDates from '../components/HomeDates';
 import HomeRecharging from '../components/HomeRecharging';
 
-const isRecharging = true;
+const isRecharging = false;
 
 const Home: NextPage = () => 
   (
