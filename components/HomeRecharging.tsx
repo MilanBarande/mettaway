@@ -1,8 +1,7 @@
 import styles from '../styles/Home.module.scss';
 import { range } from '../helpers';
 import Title from './Title';
-import SoundcloudIcon from './SoundcloudIcon'
-import TravelBack from './TrabelBack';
+import TravelBack from './TravelBack';
 
 const { stars, stars2, stars3, main, sphere, glitch } = styles;
 

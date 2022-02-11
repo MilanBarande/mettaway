@@ -1,7 +1,7 @@
 import styles from '../styles/HomeDates.module.scss';
 import RocketIcon from './RocketIcon';
 import Title from './Title';
-import TravelBack from './TrabelBack';
+import TravelBack from './TravelBack';
 
 const HomeDates = () => (
   <div className={styles.container}>
@@ -13,7 +13,7 @@ const HomeDates = () => (
       <span>Fly with us</span>
       <RocketIcon height={42} width={42} fill='white' />
     </a>
-    <TravelBack className={styles.whiteOnHover} />
+    <TravelBack className={styles.soundcloudLink} />
   </div>
 )
 
