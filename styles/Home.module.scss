@@ -110,25 +110,6 @@ $mobile-max-width: 800px;
   }
 }
 
-.title {
-  font-family: 'Monoton';
-  font-weight: 400;
-  font-size: 100px;
-  filter: drop-shadow(2px 2px 20px $purple-pink);
-
-  @media screen and (max-width: $mobile-max-width) {
-    font-size: 50px;
-  }
-  
-  &__letter:nth-child(n) {
-    color: $purple-pink;
-  }
-
-  &__letter:nth-child(2n) {
-    color: $pink;
-  }
-}
-
 .glitch {
   font-family: 'Space Mono', monospace;
   color: $purple;
@@ -169,20 +150,9 @@ $mobile-max-width: 800px;
   animation:noise-anim-2 3s infinite linear alternate-reverse;
 }
 
-.soundcloudLinkContainer {
-  margin-top: 5rem;
-}
 
-.soundcloudLink {
-  font-family: 'Space Mono', monospace;
-  color: $purple-pink;
-  display: flex;
-  flex-direction: column;
 
-  &:hover {
-    color: $pink;
-  }
-}
+
 
 $sphere-size-desktop: 25vmin;
 $sphere-size-mobile: 45vmin;

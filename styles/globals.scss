@@ -17,3 +17,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+$purple-pink: #E92EFB;
+
+.icon {
+  fill: $purple-pink;
+
+  &:hover {
+    cursor: pointer;
+    // fill: white;
+  }
+}
