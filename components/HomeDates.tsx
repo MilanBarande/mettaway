@@ -6,12 +6,15 @@ import TravelBack from './TravelBack';
 const HomeDates = () => (
   <div className={styles.container}>
     <Title className={styles.title} />
-    <h2 className={styles.subtitle}>Voyage #2</h2>
-    <span className={styles.dates}>12-16</span>
-    <span className={styles.dates}>05|22</span>
+    <h2 className={styles.subtitle}>voyage #3</h2>
+    <span className={styles.dates}>01-05</span>
+    <div className={styles.dates}>
+      <span style={{marginRight:'60px'}}>12</span>
+      2022
+    </div>
     <a href='https://forms.gle/3bLx5p9tfBtJwAyk8' className={styles.link}>
-      <span>Fly with us</span>
-      <RocketIcon height={42} width={42} fill='white' />
+      explore with us
+      <RocketIcon height={42} width={42} fill='#ababab' />
     </a>
     <TravelBack className={styles.soundcloudLink} />
   </div>
