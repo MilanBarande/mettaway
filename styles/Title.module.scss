@@ -9,19 +9,10 @@ $mobile-max-width: 800px;
 .title {
   font-family: 'Monoton';
   font-weight: 400;
-  font-size: 120px;
-  filter: drop-shadow(2px 2px 10px #ababab);
-  color: black;
+  // filter: drop-shadow(2px 2px 10px #ababab);
+  color: rgba(230,230,230, 0.6);
 
   @media screen and (max-width: $mobile-max-width) {
-    font-size: 50px;
+    // font-size: 50px;
   }
-  
-  // &__letter:nth-child(n) {
-  //   color: $purple-pink;
-  // }
-
-  // &__letter:nth-child(2n) {
-  //   color: $pink;
-  // }
 }
