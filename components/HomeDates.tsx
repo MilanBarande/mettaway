@@ -21,7 +21,7 @@ const HomeDates = () => {
           2022
         </div>
         <a href='https://tally.so/r/w44MYb' className={styles.link}>
-          fly with us →
+          embark →
         </a>
       </div>
       <GlowingDots />      
