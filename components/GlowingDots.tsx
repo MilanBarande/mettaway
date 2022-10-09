@@ -9,9 +9,13 @@ const COLORS = [
   '254,32,120',
   '68,10,213',
   '233,46,251',
+  '255,255,255',
+  '247, 92, 3',
+  '252, 188, 184',
+  '19, 60, 85'
 ]
 
-const Dot = styled.span<{ i: number, randomNumber: number }>`
+const Dot = styled.span<{ i: number }>`
   position: absolute;
   top: calc(80px * ${props => props.i});
   left: calc(80px * ${props => props.i});
@@ -25,14 +29,8 @@ const Dot = styled.span<{ i: number, randomNumber: number }>`
     left: -8px;
     width: 15px;
     height: 15px;
+    background: #F00;
     border-radius: 50%;
-    background: ${props => `rgba(${COLORS[props.randomNumber - props.i]},1)`};
-    box-shadow: ${props => `
-              0 0 20px rgba(${COLORS[props.randomNumber - props.i]},1),
-              0 0 40px rgba(${COLORS[props.randomNumber - props.i]},1),
-              0 0 60px rgba(${COLORS[props.randomNumber - props.i]},1),
-              0 0 80px rgba(${COLORS[props.randomNumber - props.i]},0.1);
-    `}
   }
 `
 
@@ -40,32 +38,31 @@ export default function GlowingDots() {
   const [randomNumber, setRandomNumber] = useState(1);
   useEffect(() => {
     const interval = setInterval(() => {
-      setRandomNumber(Math.floor(Math.random() * 6) + 1)
-    }, 2000)
+      setRandomNumber(Math.round(Math.random() *10))
+    }, 1000)
     return () => clearInterval(interval)
   })
-  
   return (
     <div className={styles.glowingContainer}>
         <div className={styles.glowing}>
-          <Dot i={1} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={2} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={3} randomNumber={randomNumber}  className={styles.dot} />
+          <Dot i={1} className={styles.dot} />
+          <Dot i={2} className={styles.dot} />
+          <Dot i={3} className={styles.dot} />
         </div>
         <div className={styles.glowing}>
-          <Dot i={2} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={3} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={1} randomNumber={randomNumber}  className={styles.dot} />
+          <Dot i={1} className={styles.dot} />
+          <Dot i={2} className={styles.dot} />
+          <Dot i={3} className={styles.dot} />
         </div>
         <div className={styles.glowing}>
-          <Dot i={1} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={2} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={3} randomNumber={randomNumber}  className={styles.dot} />
+          <Dot i={1} className={styles.dot} />
+          <Dot i={2} className={styles.dot} />
+          <Dot i={3} className={styles.dot} />
         </div>
         <div className={styles.glowing}>
-          <Dot i={3} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={1} randomNumber={randomNumber}  className={styles.dot} />
-          <Dot i={2} randomNumber={randomNumber}  className={styles.dot} />
+          <Dot i={1} className={styles.dot} />
+          <Dot i={2} className={styles.dot} />
+          <Dot i={3} className={styles.dot} />
         </div> 
       </div>
   )
