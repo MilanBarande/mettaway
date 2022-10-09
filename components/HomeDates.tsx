@@ -1,36 +1,17 @@
 import styles from '../styles/HomeDates.module.scss';
+import GlowingDots from './GlowingDots';
 import Title from './Title';
 import TravelBack from './TravelBack';
-import styled from 'styled-components';
 
-const Dot = styled.span<{ i: number }>`
-  position: absolute;
-  top: calc(80px * ${props => props.i});
-  left: calc(80px * ${props => props.i});
-  right: calc(80px * ${props => props.i});
-  bottom: calc(80px * ${props => props.i});
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -8px;
-    width: 15px;
-    height: 15px;
-    background: #F00;
-    border-radius: 50%;
-  }
-`
-
+ 
 const HomeDates = () => {
-  return (
+  return ( 
   <>
+    <GlowingDots />
     <div className={styles.container}>
-      <Dot i={1} className={styles.dot} />
-      <Dot i={2} className={styles.dot} />
-      <Dot i={3} className={styles.dot} />
       <Title className={styles.title} />
       <h2 className={styles.subtitle}>voyage #3</h2>
+    <GlowingDots />      
       <div className={styles.box}>
         <span className={styles.destination}>destination</span>
         <span className={styles.darkpalm}>D4rk P4lm</span>
@@ -44,7 +25,8 @@ const HomeDates = () => {
         </a>
       </div>
       <TravelBack className={styles.soundcloudLink} />
-    </div>
+    </div>  
+    <GlowingDots />      
   </>
 )}
 
