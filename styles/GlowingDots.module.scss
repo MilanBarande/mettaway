@@ -1,0 +1,117 @@
+
+.glowingContainer {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowing {
+  z-index: 0;
+  min-width: 750px;
+  height: 50px;
+  position: relative;
+  margin: -100px;
+  transform-origin: right;
+  animation: colorChange 10s linear infinite;
+}
+
+.glowing:nth-child(even) {
+  transform-origin: left;
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.glowing .dot:nth-child(3n+1):before {
+  background: rgba(1,253,41,1);
+  box-shadow: 0 0 20px rgba(1,253,41,1),
+              0 0 40px rgba(1,253,41,1),
+              0 0 60px rgba(1,253,41,1),
+              0 0 80px rgba(1,253,41,0.1);
+}
+
+.glowing .dot:nth-child(3n+2):before {
+  background: rgba(255,214,0,1);
+  box-shadow: 0 0 20px rgba(255,214,0,1),
+              0 0 40px rgba(255,214,0,1),
+              0 0 60px rgba(255,214,0,1),
+              0 0 80px rgba(255,214,0,0.1);
+}
+
+.glowing .dot:nth-child(3n+3):before {
+  background: rgba(233,46,251,1);
+  box-shadow: 0 0 20px rgba(233,46,251,1),
+              0 0 40px rgba(233,46,251,1),
+              0 0 60px rgba(233,46,251,1),
+              0 0 80px rgba(233,46,251,0.1);
+}
+
+.glowing .dot:nth-child(3n+1) {
+  animation: animate 80s alternate infinite;
+  &:before {
+    animation: grow 3s alternate infinite;
+  }
+}
+
+.glowing .dot:nth-child(3n+2) {
+  animation: animate-reverse 50s alternate infinite;
+  &:before {
+    animation: grow2 10s alternate infinite;
+  }
+}
+
+.glowing .dot:nth-child(3n+3) {
+  animation: animate-reverse 60s alternate infinite;
+  &:before {
+    animation: grow2 8s alternate infinite;
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@keyframes grow2 {
+  0% {
+    width: 5px;
+    height: 5px;
+  }
+  100% {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@keyframes animate {
+  0% { 
+    transforme: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-reverse {
+  0% {
+    transforme: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
