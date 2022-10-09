@@ -15,6 +15,7 @@ $mobile-max-width: 800px;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
 }
 
 .box {
@@ -28,7 +29,7 @@ $mobile-max-width: 800px;
 }
 
 .destination {
-  color: white;
+  color: #ababab;
   position: absolute;
   top: -1.8rem;
 }
@@ -123,5 +124,57 @@ $mobile-max-width: 800px;
 
   @media screen and (max-width: $mobile-max-width) {
     // font-size: 30px;
+  }
+}
+
+// glowing particles
+
+.container .dot:nth-child(3n+1):before {
+  background: rgba(134,255,0,1);
+  box-shadow: 0 0 20px rgba(134,255,0,1),
+              0 0 40px rgba(134,255,0,1),
+              0 0 60px rgba(134,255,0,1),
+              0 0 80px rgba(134,255,0,0.1);
+}
+
+.container .dot:nth-child(3n+2):before {
+  background: rgba(255,214,0,1);
+  box-shadow: 0 0 20px rgba(255,214,0,1),
+              0 0 40px rgba(255,214,0,1),
+              0 0 60px rgba(255,214,0,1),
+              0 0 80px rgba(255,214,0,0.1);
+}
+
+.container .dot:nth-child(3n+3):before {
+  background: rgba(0,226,255,1);
+  box-shadow: 0 0 20px rgba(0,226,255,1),
+              0 0 40px rgba(0,226,255,1),
+              0 0 60px rgba(0,226,255,1),
+              0 0 80px rgba(0,226,255,0.1);
+}
+
+.container .dot:nth-child(3n+1) {
+  animation: animate 10s alternate infinite;
+}
+
+.container .dot:nth-child(3n+2) {
+  animation: animatereverse 3s alternate infinite;
+}
+
+@keyframes animate {
+  0% { 
+    transforme: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animatereverse {
+  0% {
+    transforme: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
