@@ -11,6 +11,23 @@
   height: 50px;
   position: relative;
   margin: -100px;
+  transform-origin: right;
+  animation: colorChange 5s linear infinite;
+}
+
+.glowing:nth-child(even) {
+  transform-origin: left;
+}
+
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .glowing .dot:nth-child(3n+1):before {
@@ -38,15 +55,46 @@
 }
 
 .glowing .dot:nth-child(3n+1) {
-  animation: animate 10s alternate infinite;
+  animation: animate 80s alternate infinite;
+  &:before {
+    animation: grow 3s alternate infinite;
+  }
 }
 
 .glowing .dot:nth-child(3n+2) {
   animation: animate-reverse 5s alternate infinite;
+  &:before {
+    animation: grow2 10s alternate infinite;
+  }
 }
 
 .glowing .dot:nth-child(3n+3) {
-  animation: animate-reverse 8s alternate infinite;
+  animation: animate-reverse 15s alternate infinite;
+  &:before {
+    animation: grow2 8s alternate infinite;
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 10px;
+    height: 10px;
+  }
+  100% {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@keyframes grow2 {
+  0% {
+    width: 5px;
+    height: 5px;
+  }
+  100% {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 @keyframes animate {

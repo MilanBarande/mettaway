@@ -13,9 +13,6 @@ const Home: NextPage = () =>
         <meta name="description" content="Official Mettaway festival website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <audio autoPlay>
-        <source src="/xaxoeira.mp3" type="audio/mpeg"/>
-      </audio>
       <HomeDates />
     </>
   )
