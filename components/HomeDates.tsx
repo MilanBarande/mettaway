@@ -10,8 +10,8 @@ const HomeDates = () => {
     <GlowingDots />
     <div className={styles.container}>
       <Title className={styles.title} />
-      <h2 className={styles.subtitle}>voyage #3</h2>
-    <GlowingDots />      
+      <h2 className={styles.subtitle}>voyage #3</h2> 
+      <GlowingDots />      
       <div className={styles.box}>
         <span className={styles.destination}>destination</span>
         <span className={styles.darkpalm}>D4rk P4lm</span>
@@ -24,9 +24,10 @@ const HomeDates = () => {
           fly with us →
         </a>
       </div>
+      <GlowingDots />      
+
       <TravelBack className={styles.soundcloudLink} />
     </div>  
-    <GlowingDots />      
   </>
 )}
 

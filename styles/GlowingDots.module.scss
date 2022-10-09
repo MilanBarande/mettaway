@@ -7,12 +7,13 @@
 }
 
 .glowing {
+  z-index: 0;
   min-width: 750px;
   height: 50px;
   position: relative;
   margin: -100px;
   transform-origin: right;
-  animation: colorChange 5s linear infinite;
+  animation: colorChange 10s linear infinite;
 }
 
 .glowing:nth-child(even) {
@@ -31,11 +32,11 @@
 }
 
 .glowing .dot:nth-child(3n+1):before {
-  background: rgba(134,255,0,1);
-  box-shadow: 0 0 20px rgba(134,255,0,1),
-              0 0 40px rgba(134,255,0,1),
-              0 0 60px rgba(134,255,0,1),
-              0 0 80px rgba(134,255,0,0.1);
+  background: rgba(1,253,41,1);
+  box-shadow: 0 0 20px rgba(1,253,41,1),
+              0 0 40px rgba(1,253,41,1),
+              0 0 60px rgba(1,253,41,1),
+              0 0 80px rgba(1,253,41,0.1);
 }
 
 .glowing .dot:nth-child(3n+2):before {
@@ -47,11 +48,11 @@
 }
 
 .glowing .dot:nth-child(3n+3):before {
-  background: rgba(0,226,255,1);
-  box-shadow: 0 0 20px rgba(0,226,255,1),
-              0 0 40px rgba(0,226,255,1),
-              0 0 60px rgba(0,226,255,1),
-              0 0 80px rgba(0,226,255,0.1);
+  background: rgba(233,46,251,1);
+  box-shadow: 0 0 20px rgba(233,46,251,1),
+              0 0 40px rgba(233,46,251,1),
+              0 0 60px rgba(233,46,251,1),
+              0 0 80px rgba(233,46,251,0.1);
 }
 
 .glowing .dot:nth-child(3n+1) {
@@ -62,14 +63,14 @@
 }
 
 .glowing .dot:nth-child(3n+2) {
-  animation: animate-reverse 5s alternate infinite;
+  animation: animate-reverse 50s alternate infinite;
   &:before {
     animation: grow2 10s alternate infinite;
   }
 }
 
 .glowing .dot:nth-child(3n+3) {
-  animation: animate-reverse 15s alternate infinite;
+  animation: animate-reverse 60s alternate infinite;
   &:before {
     animation: grow2 8s alternate infinite;
   }

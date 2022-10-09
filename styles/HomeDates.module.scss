@@ -5,6 +5,7 @@ $pink: #fe2078;
 $purple: #440ad5;
 $dark-blue: #05015e;
 $mobile-max-width: 800px;
+$green: rgb(1,253,41);
 
 
 .container {
@@ -19,6 +20,7 @@ $mobile-max-width: 800px;
 }
 
 .box {
+  z-index: 2;
   border: 30px solid rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
@@ -38,8 +40,8 @@ $mobile-max-width: 800px;
   font-size: 5rem;
   z-index:2;
   @media screen and (max-width: $mobile-max-width) {
-    // font-size: 50px !important;
-    // padding-top: 150px;
+    font-size: 3.5rem !important;
+    margin-top: 3rem;
   }
 }
 
@@ -50,7 +52,7 @@ $mobile-max-width: 800px;
   // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 20px #ababab;
 
   @media screen and (max-width: $mobile-max-width) {
-    // font-size: 70px;
+    // font-size: 70px; 
   }
 }
 
@@ -59,8 +61,8 @@ $mobile-max-width: 800px;
 }
 
 .darkpalm {
-  color: lightgreen;
-  text-shadow: 0px 1px 1px green, 0px 0px 20px green;
+  color: $green;
+  text-shadow: 0px 1px 1px rgb(1,253,41), 0px 0px 20px rgb(1,253,41);
 
   font-size: 2rem;
 }
@@ -100,7 +102,6 @@ $mobile-max-width: 800px;
   }
 
   @media screen and (max-width: $mobile-max-width) {
-    font-size: 28px;
   }
 }
 
