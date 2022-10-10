@@ -15,6 +15,7 @@ body {
 
   @media screen and (max-width: $mobile-max-width) {
     background: url(../public/background-mobile.webp) no-repeat center center;
+    overflow: auto;
   }
 }
 
