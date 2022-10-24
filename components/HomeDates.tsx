@@ -20,7 +20,7 @@ const HomeDates = () => {
           <span style={{marginRight:'30px'}}>12</span>
           2022
         </div>
-        <a href='https://tally.so/r/w44MYb' className={styles.link}>
+        <a href='https://forms.gle/KUD5urWVRFQmoKFY7' className={styles.link}>
           embark →
         </a>
       </div>
