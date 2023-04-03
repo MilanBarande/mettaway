@@ -8,25 +8,32 @@ const HomeDates = () => {
   return ( 
   <>
     <GlowingDots />
+    <GlowingDots />      
+
     <div className={styles.container}>
       <Title className={styles.title} />
-      <h2 className={styles.subtitle}>voyage #3</h2> 
-      <GlowingDots />      
-      <div className={styles.box}>
-        <span className={styles.destination}>destination</span>
-        <span className={styles.darkpalm}>D4rk P4lm</span>
-        <span className={styles.dates}>01-05</span>
-        <div className={styles.dates}>
-          <span style={{marginRight:'30px'}}>12</span>
-          2022
+      <div className={styles.box1}>
+        <h2 
+        className={styles.subtitle}
+        >voyage #4</h2> 
+        <div className={styles.box3}>
+          <span>24.05. -29.05.</span>
+          <span>Oyonnax Region</span>
+          <span>France</span>
         </div>
-        <a href='https://forms.gle/KUD5urWVRFQmoKFY7' className={styles.link}>
+      </div>
+      <GlowingDots /> 
+      <div  
+        className={styles.box2}
+      >
+        <span className={styles['laser-lake']}>L4SER L4KE</span>     
+      </div>
+      <div className={styles.box4}>
+      <TravelBack className={styles.soundcloudLink} />
+        <a href='https://tally.so/r/3XL2KV' className={styles.link}>
           embark →
         </a>
       </div>
-      <GlowingDots />      
-
-      <TravelBack className={styles.soundcloudLink} />
     </div>  
   </>
 )}

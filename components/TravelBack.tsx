@@ -3,7 +3,7 @@ import SoundcloudIcon from './SoundcloudIcon';
 
 const TravelBack = ({className}: {className?:string}) => (
   <div className={styles.container}>
-    <a target='_blank' rel="noreferrer noopener" href='https://soundcloud.com/taylla-yamagucci/sets/mettaway-voayge-2-laser-jungle' className={`${styles.link} ${className}`}>
+    <a target='_blank' rel="noreferrer noopener" href='https://soundcloud.com/hotzpott/sets/d4rk-p4lm-mettaway-voyage-3' className={`${styles.link} ${className}`}>
       <span>travel back in time</span>
       <SoundcloudIcon height={60} width={60} />
     </a>

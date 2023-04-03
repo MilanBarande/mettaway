@@ -10,8 +10,10 @@ $mobile-max-width: 800px;
   font-family: 'Monoton';
   font-weight: 400;
   filter: drop-shadow(2px 2px 10px #ababab);
-  color: rgba(230,230,230, 0.8);
-
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 21px #fedd77;
   @media screen and (max-width: $mobile-max-width) {
     // font-size: 50px;
   }

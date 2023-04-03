@@ -9,7 +9,7 @@ $mobile-max-width: 800px;
   margin-top: 5rem;
 
   @media screen and (max-width: $mobile-max-width) {
-    margin-bottom: 3rem;
+    margin: 0;
   }
 }
 
