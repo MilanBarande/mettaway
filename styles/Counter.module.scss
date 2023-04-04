@@ -1,5 +1,3 @@
-$mobile-max-width: 800px;
-
 .counter {
   color: #fed007;
   position: absolute;
@@ -10,18 +8,7 @@ $mobile-max-width: 800px;
   margin-top: -15px;
 }
 
-.extraMargin {
-  margin-top: 100px;
-}
-
-// .background {
-//   @media screen and (max-width: $mobile-max-width) {
-//     background:rgba(0, 0, 0, 0.25);
-//   }
-// }
-
 .box {
-
   p {
     margin: 0
   }
