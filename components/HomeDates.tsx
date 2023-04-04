@@ -2,7 +2,7 @@ import styles from '../styles/HomeDates.module.scss';
 import GlowingDots from './GlowingDots';
 import Title from './Title';
 import TravelBack from './TravelBack';
-
+import Counter from './Counter';
  
 const HomeDates = () => {
   return ( 
@@ -22,6 +22,7 @@ const HomeDates = () => {
           <span>France</span>
         </div>
       </div>
+      <Counter />
       <GlowingDots /> 
       <div  
         className={styles.box2}

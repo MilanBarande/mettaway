@@ -1,9 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import HomeDates from '../components/HomeDates';
-import HomeRecharging from '../components/HomeRecharging';
-
-const isRecharging = false;
 
 const Home: NextPage = () => 
   (
@@ -16,6 +13,5 @@ const Home: NextPage = () =>
       <HomeDates />
     </>
   )
-
 
 export default Home
