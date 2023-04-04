@@ -3,8 +3,13 @@ import GlowingDots from './GlowingDots';
 import Title from './Title';
 import TravelBack from './TravelBack';
 import Counter from './Counter';
+
+type HomeDatesProps = {
+  paid: number;
+  registered: number;
+}
  
-const HomeDates = () => {
+const HomeDates = ({paid, registered}: HomeDatesProps) => {
   return ( 
   <>
     <GlowingDots />
@@ -22,7 +27,7 @@ const HomeDates = () => {
           <span>France</span>
         </div>
       </div>
-      <Counter />
+      <Counter paid={paid} registered={registered} />
       <GlowingDots /> 
       <div  
         className={styles.box2}
