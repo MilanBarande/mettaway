@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import HomeDates from '../components/HomeDates';
 import { Client } from "@notionhq/client";
+import { GetServerSideProps } from 'next'
 
 type Props = {
   registered: number;
@@ -55,7 +56,16 @@ async function getDatabaseData() {
   }
 }
 
-export async function getServerSideProps() {
+type Data = {
+  registered: number;
+  paid: number;
+}
+
+export const getServerSideProps:GetServerSideProps<Data> = async ({ res }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10' // 10 seconds cache
+  )
   const data = await getDatabaseData();
   return {
     props: {
