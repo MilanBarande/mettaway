@@ -64,7 +64,7 @@ type Data = {
 export const getServerSideProps:GetServerSideProps<Data> = async ({ res }) => {
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=10' // 10 seconds cache
+    'public, s-maxage=60' // 1 mn cache
   )
   const data = await getDatabaseData();
   return {
