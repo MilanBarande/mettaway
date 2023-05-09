@@ -1,11 +1,18 @@
 .counter {
+  font-size: 1.2rem;
   color: #fed007;
   position: absolute;
   top: 40%;
   right: 20px;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  margin-top: -15px;
+}
+
+@media (max-width: 800px) {
+  .counter {
+    font-size: 1rem;
+    top: 44%;
+  }
 }
 
 .box {
