@@ -11,15 +11,19 @@ $lightblue: #00C2FF;
 .container {
   font-family: 'Norse';
   width: 100%;
-  height: 100vh;
+  height: 180vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   position: relative;
+  @media screen and (max-width: $mobile-max-width) {
+    height: 150vh;
+  }
 }
 
 .title {
+  margin-top: 50px;
   z-index:2;
   @media screen and (max-width: $mobile-max-width) {
     margin-top: 1rem;
@@ -44,9 +48,13 @@ $lightblue: #00C2FF;
 
 .infos {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   p {
     margin: 0;
+  }
+
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2.5rem;
   }
 }
 
@@ -81,7 +89,7 @@ $lightblue: #00C2FF;
   align-items: center;
   text-underline-offset: 3px;
   font-size: 13px;
-  margin-bottom: 150px;
+  margin-bottom: 180px;
 
   &:hover {
     text-decoration: none;
