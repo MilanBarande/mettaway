@@ -8,40 +8,34 @@ type HomeDatesProps = {
   paid: number;
   registered: number;
 }
- 
-const HomeDates = ({paid, registered}: HomeDatesProps) => {
-  return ( 
-  <>
-    <GlowingDots />
-    <GlowingDots />      
 
-    <div className={styles.container}>
-      <Title className={styles.title} />
-      <div className={styles.box1}>
-        <h2 
-        className={styles.subtitle}
-        >voyage #4</h2> 
-        <div className={styles.box3}>
-          <span>24.05. -29.05.</span>
-          <span>Oyonnax Region</span>
-          <span>France</span>
+
+const HomeDates = ({ paid, registered }: HomeDatesProps) => {
+  return (
+    <>
+      {/* <GlowingDots /> */}
+      {/* <GlowingDots /> */}
+
+      <div className={styles.container}>
+        <Title className={styles.title} />
+        <h2 className={styles.subtitle}>
+          voyage #5
+        </h2>
+
+        <h1 className={styles.yggdrasil}>YGGDRASIL</h1>
+        <div className={styles.infos}>
+          <p>16.-20.</p>
+          <p>11.2023</p>
+          <p className={styles.location}>Black Forest Region</p>
         </div>
-      </div>
-      <Counter paid={paid} registered={registered} />
-      <GlowingDots /> 
-      <div  
-        className={styles.box2}
-      >
-        <span className={styles['laser-lake']}>L4SER L4KE</span>     
-      </div>
-      <div className={styles.box4}>
-      <TravelBack className={styles.soundcloudLink} />
+        {/* <GlowingDots /> */}
         <a href='https://tally.so/r/3XL2KV' className={styles.link}>
-          embark →
+          explore with us →
         </a>
+        {/* <Counter paid={paid} registered={registered} /> */}
       </div>
-    </div>  
-  </>
-)}
+    </>
+  )
+}
 
 export default HomeDates;
