@@ -4,7 +4,7 @@ const { title, title__letter } = styles;
 
 const Title = ({className}: {className?: string}) => (
   <div className={`${title} ${className}`}>
-    <span className={title__letter}>M</span>
+    <span className={title__letter}>m</span>
     <span className={title__letter}>e</span>
     <span className={title__letter}>t</span>
     <span className={title__letter}>t</span>

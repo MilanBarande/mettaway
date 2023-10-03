@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Space+Mono&display=swap');
 
+@font-face {
+  font-family: 'Norse';
+  src: url('../public/Norse.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NorseBold';
+  src: url('../public/Norsebold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 $mobile-max-width: 800px;
 
 html,
@@ -13,9 +27,9 @@ body {
   height: 100vh;
   overflow: hidden;
 
-  @media screen and (max-width: $mobile-max-width) {
-    overflow: auto;
-  }
+  // @media screen and (max-width: $mobile-max-width) {
+  //   overflow: auto;
+  // }
 }
 
 h2 {

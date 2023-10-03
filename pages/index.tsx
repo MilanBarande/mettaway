@@ -28,7 +28,7 @@ const API_KEY = process.env.NOTION_API_KEY as string;
 
 const notion = new Client({ auth: API_KEY }); 
 
-const databaseUrlOrId = "1b3c3237691d4b25a8139b089ee98daa"; // Signups #4
+const databaseUrlOrId = "8028cd19337d41208de0243d30860cbc"; // Signups #5
 
 async function getDatabaseData() {
   try {
