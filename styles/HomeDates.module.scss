@@ -103,6 +103,13 @@ $lightblue: #00C2FF;
 
   @media screen and (max-width: $mobile-max-width) {
     font-size: 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 120px;
+    height: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
   }
 }
 
