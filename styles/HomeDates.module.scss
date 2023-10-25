@@ -113,6 +113,33 @@ $lightblue: #00C2FF;
   }
 }
 
+.soldout {
+  font-family: 'Space Mono', monospace;
+  width: 50%;
+  color: white;
+  text-align: center;
+  @media screen and (max-width: $mobile-max-width) {
+    width: 100%;
+    padding: 0 10px;
+    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.waitlistlink {
+  color: #ABABAB;
+  text-shadow: 0px 1px 1px #000, 0px 0px 20px #ABABAB;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 20px #ababab;
+  }
+}
+
 .soundcloudLink {
   font-size: 1.2rem;
   color: #fedd77 !important;

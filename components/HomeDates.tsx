@@ -29,9 +29,14 @@ const HomeDates = ({ paid, registered }: HomeDatesProps) => {
           <p className={styles.location}>Black Forest Region</p>
         </div>
         {/* <GlowingDots /> */}
-        <a href='https://tally.so/r/3NlZaO' className={styles.link}>
-          explore with us →
-        </a>
+        <div className={styles.soldout}>
+          <p>
+            We&apos;ve reached capacity!
+          </p>
+          <p>
+            Hello dear explorer, our spaceship only has a limited amount of seats and they&apos;ve been filled with lovely people. Usually there are some people cancelling before the event, so we&apos;d invite you to fill out the waitlist <a className={styles.waitlistlink} href="https://tally.so/r/mRol2Q">here</a>. If you have the option to sleep in a van or tent, we could still take you with us anyway. Just tick the respective boxes in the waitlist form and we&apos;ll be in touch! with love from your space friends!
+          </p>
+        </div>
         {/* <Counter paid={paid} registered={registered} /> */}
       </div>
     </>
