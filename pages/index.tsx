@@ -61,18 +61,18 @@ type Data = {
   paid: number;
 }
 
-export const getServerSideProps:GetServerSideProps<Data> = async ({ res }) => {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=60' // 1 mn cache
-  )
-  const data = await getDatabaseData();
-  return {
-    props: {
-      registered: data?.registered ?? 0,
-      paid: data?.paid ?? 0,
-    }
-  }
-}
+// export const getServerSideProps:GetServerSideProps<Data> = async ({ res }) => {
+//   res.setHeader(
+//     'Cache-Control',
+//     'public, s-maxage=60' // 1 mn cache
+//   )
+//   const data = await getDatabaseData();
+//   return {
+//     props: {
+//       registered: data?.registered ?? 0,
+//       paid: data?.paid ?? 0,
+//     }
+//   }
+// }
 
 export default Home
