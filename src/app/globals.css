@@ -49,13 +49,35 @@ h6 {
 .date-glow {
   text-shadow:
     0 0 25px #00c2ffff,
-    0 0 35px #00c2ffaa; /* Increased glow */
+    0 0 35px #00c2ffaa;
 }
 
 .title-glow {
   text-shadow:
     0 0 60px #f6f6f6,
-    0 0 80px #f6f6f6aa; /* Increased glow */
+    0 0 80px #f6f6f6aa;
+}
+
+.text-with-blur {
+  position: relative;
+  z-index: 1;
+}
+
+.text-with-blur::before {
+  content: '';
+  position: absolute;
+  inset: -40px -60px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.15) 20%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.05) 60%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  backdrop-filter: blur(2px);
+  z-index: -1;
+  border-radius: 40px;
 }
 
 @layer utilities {
