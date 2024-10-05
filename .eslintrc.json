@@ -1,3 +1,8 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["prettier", "react"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react/jsx-newline": ["error", { "prevent": true }]
+  }
 }
