@@ -3,21 +3,59 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: #ffffff;
+  --background-start-rgb: #000000;
+  --background-end-rgb: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  color: var(--foreground-rgb);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--monoton-font);
+}
+
+#background-container {
+  position: absolute;
+  inset: 0;
+  width: 200vw;
+  height: 200vh;
+  background-image: url('/assets/mettagames.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#content-wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.date-glow {
+  text-shadow:
+    0 0 25px #00c2ffff,
+    0 0 35px #00c2ffaa; /* Increased glow */
+}
+
+.title-glow {
+  text-shadow:
+    0 0 60px #f6f6f6,
+    0 0 80px #f6f6f6aa; /* Increased glow */
 }
 
 @layer utilities {
