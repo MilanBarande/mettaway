@@ -23,6 +23,19 @@ export async function addInterestedPerson() {
     });
     return { success: true };
   } catch (error) {
+    console.error('Failed to add interested person:', error);
     return { success: false, error: 'Failed to register interest' };
+  }
+}
+
+export async function getInterestedCount() {
+  try {
+    const response = await notion.databases.query({
+      database_id: dbId,
+    });
+    return response.results.length;
+  } catch (error) {
+    console.error('Failed to get interested count:', error);
+    return 0;
   }
 }
