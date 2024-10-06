@@ -17,22 +17,22 @@ const turretRoad = Turret_Road({
 });
 
 export default function Home() {
-  useEffect(() => {
-    const centerContent = () => {
-      const scrollX =
-        (document.documentElement.scrollWidth - window.innerWidth) / 2;
-      const scrollY =
-        (document.documentElement.scrollHeight - window.innerHeight) / 2;
-      window.scrollTo(scrollX, scrollY);
-    };
+  // useEffect(() => {
+  //   const centerContent = () => {
+  //     const scrollX =
+  //       (document.documentElement.scrollWidth - window.innerWidth) / 2;
+  //     const scrollY =
+  //       (document.documentElement.scrollHeight - window.innerHeight) / 2;
+  //     window.scrollTo(scrollX, scrollY);
+  //   };
 
-    centerContent();
-    window.addEventListener('resize', centerContent);
+  //   centerContent();
+  //   window.addEventListener('resize', centerContent);
 
-    return () => {
-      window.removeEventListener('resize', centerContent);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('resize', centerContent);
+  //   };
+  // }, []);
 
   return (
     <main className="flex flex-col items-center justify-center p-4 sm:p-4 md:p-8 lg:p-12 min-h-screen">
