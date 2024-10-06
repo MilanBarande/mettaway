@@ -1,4 +1,6 @@
 import { Monoton, Turret_Road } from 'next/font/google';
+import { Client } from '@notionhq/client';
+import InterestedButton from './components/InterestedButton';
 
 const monoton = Monoton({
   weight: '400',
@@ -12,7 +14,47 @@ const turretRoad = Turret_Road({
   display: 'swap',
 });
 
-export default function Home() {
+const dbId = '034f5c56085d4ae0a91f7cde65ab52b1';
+
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
+console.log('🔥 ~~~ process.env.NOTION_API_KEY:', process.env.NOTION_API_KEY);
+
+async function getNotionData() {
+  const response = await notion.databases.query({
+    database_id: dbId,
+  });
+  return response.results;
+}
+
+async function addInterestedPerson() {
+  'use server';
+  try {
+    const result = await notion.pages.create({
+      parent: { database_id: dbId },
+      properties: {
+        'First Name': {
+          title: [
+            {
+              text: {
+                content: 'Anonymous Interested',
+              },
+            },
+          ],
+        },
+      },
+    });
+    console.log('🔥 ~~~ addInterestedPerson ~~~ result:', result);
+    return { success: true };
+  } catch (error) {
+    console.error('Failed to add interested person:', error);
+    return { success: false, error: 'Failed to register interest' };
+  }
+}
+
+export default async function Home() {
+  const notionData = await getNotionData();
+  console.log('🔥 ~~~ Home ~~~ notionData:', notionData);
+
   return (
     <main className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-16 lg:p-24 min-h-screen">
       <div className="max-w-full text-center text-with-blur">
@@ -27,11 +69,7 @@ export default function Home() {
         >
           21.-25.11.2024
         </span>
-        <span
-          className={`${turretRoad.className} text-black text-[16px] sm:text-[24px] md:text-[40px] lg:text-[60px] font-bold date-glow block`}
-        >
-          12 / 140 SPOTS AVAILABLE
-        </span>
+        <InterestedButton />
       </div>
     </main>
   );
