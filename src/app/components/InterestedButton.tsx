@@ -41,24 +41,36 @@ const InterestedButton: React.FC = () => {
   };
 
   return (
-    <span
+    <div
       onClick={handleClick}
       className={`
         ${turretRoad.className}
-        text-[20px] sm:text-[20px] md:text-[30px] lg:text-[40px]
-        text-[#FFFFFF] cursor-pointer
+        text-[24px] sm:text-[28px] md:text-[36px] lg:text-[48px]
+        cursor-pointer
         transition-all duration-300
-        hover:no-underline
-        interested-button-glow
-        ${isInterested || isLoading ? 'opacity-50 cursor-not-allowed' : ''}
+        mt-8 font-bold
+        px-4 py-2 rounded
+        text-with-blur
+        ${
+          isInterested || isLoading
+            ? 'text-white opacity-80 cursor-not-allowed'
+            : 'text-black hover:text-white interested-button-glow'
+        }
       `}
     >
-      {isLoading
-        ? 'Processing...'
-        : isInterested
-          ? 'Thank you for your interest! You will hear from us soon.'
-          : 'I want to attend the Metta Games'}
-    </span>
+      {isLoading ? (
+        'Processing...'
+      ) : isInterested ? (
+        <>
+          <div>Thank you for your interest!</div>
+          <div className="text-[16px] sm:text-[20px] md:text-[24px] lg:text-[32px] mt-2">
+            You will hear from us soon...
+          </div>
+        </>
+      ) : (
+        'I want to attend the Metta Games'
+      )}
+    </div>
   );
 };
 

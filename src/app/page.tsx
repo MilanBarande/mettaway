@@ -17,7 +17,6 @@ const turretRoad = Turret_Road({
 const dbId = '034f5c56085d4ae0a91f7cde65ab52b1';
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-console.log('🔥 ~~~ process.env.NOTION_API_KEY:', process.env.NOTION_API_KEY);
 
 async function getNotionData() {
   const response = await notion.databases.query({
@@ -26,34 +25,8 @@ async function getNotionData() {
   return response.results;
 }
 
-async function addInterestedPerson() {
-  'use server';
-  try {
-    const result = await notion.pages.create({
-      parent: { database_id: dbId },
-      properties: {
-        'First Name': {
-          title: [
-            {
-              text: {
-                content: 'Anonymous Interested',
-              },
-            },
-          ],
-        },
-      },
-    });
-    console.log('🔥 ~~~ addInterestedPerson ~~~ result:', result);
-    return { success: true };
-  } catch (error) {
-    console.error('Failed to add interested person:', error);
-    return { success: false, error: 'Failed to register interest' };
-  }
-}
-
 export default async function Home() {
   const notionData = await getNotionData();
-  console.log('🔥 ~~~ Home ~~~ notionData:', notionData);
 
   return (
     <main className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-16 lg:p-24 min-h-screen">
