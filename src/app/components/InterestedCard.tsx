@@ -59,7 +59,7 @@ const InterestedCard: React.FC = () => {
         className={`${turretRoad.className} text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-black mb-6 date-glow`}
       >
         {interestedCount >= 50
-          ? 'Congratulations, 50 explorers have joined!'
+          ? 'Congratulations, you unlocked the signup together!'
           : 'Find 50 explorers to unlock the signup!'}
       </p>
       <p
@@ -68,11 +68,20 @@ const InterestedCard: React.FC = () => {
         {interestedCount} / 50
       </p>
       {interestedCount >= 50 ? (
-        <p
-          className={`${turretRoad.className} text-[24px] text-black date-glow`}
+        <a
+          href="https://tally.so/r/w5GKoo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`
+            ${turretRoad.className} text-[24px] font-bold
+            bg-[#E92EFB] text-white
+            px-6 py-2 rounded-full
+            hover:bg-opacity-80 transition-all duration-300
+            date-glow text-shadow inline-block
+          `}
         >
-          You will soon receive a message
-        </p>
+          Sign up
+        </a>
       ) : isLoading ? (
         <p
           className={`${turretRoad.className} text-[24px] text-black date-glow`}
