@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { addInterestedPerson, getInterestedCount } from '../actions';
 import { Turret_Road } from 'next/font/google';
 
@@ -29,7 +29,7 @@ const InterestedCard: React.FC = () => {
   };
 
   const handleClick = async () => {
-    if (isInterested || isLoading) return;
+    if (isInterested || isLoading || interestedCount >= 50) return;
 
     setIsLoading(true);
     try {
@@ -51,21 +51,29 @@ const InterestedCard: React.FC = () => {
   return (
     <div className="bg-white bg-opacity-30 p-8 rounded-lg text-center">
       <h2
-        className={`${turretRoad.className} text-[36px] sm:text-[48px] md:text-[54px] lg:text-[60px] font-bold text-black mb-4 date-glow`}
+        className={`${turretRoad.className} text-[60px] font-bold text-black mb-4 date-glow`}
       >
         GAME #1
       </h2>
       <p
         className={`${turretRoad.className} text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-black mb-6 date-glow`}
       >
-        Find 50 explorers to unlock the signup!
+        {interestedCount >= 50
+          ? 'Congratulations, 50 explorers have joined!'
+          : 'Find 50 explorers to unlock the signup!'}
       </p>
       <p
         className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow`}
       >
         {interestedCount} / 50
       </p>
-      {isLoading ? (
+      {interestedCount >= 50 ? (
+        <p
+          className={`${turretRoad.className} text-[24px] text-black date-glow`}
+        >
+          You will soon receive a message
+        </p>
+      ) : isLoading ? (
         <p
           className={`${turretRoad.className} text-[24px] text-black date-glow`}
         >
