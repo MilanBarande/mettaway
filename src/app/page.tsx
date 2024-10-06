@@ -2,7 +2,6 @@
 
 import { Monoton, Turret_Road } from 'next/font/google';
 import InterestedCard from './components/InterestedCard';
-import { useEffect } from 'react';
 
 const monoton = Monoton({
   weight: '400',
@@ -17,26 +16,13 @@ const turretRoad = Turret_Road({
 });
 
 export default function Home() {
-  // useEffect(() => {
-  //   const centerContent = () => {
-  //     const scrollX =
-  //       (document.documentElement.scrollWidth - window.innerWidth) / 2;
-  //     const scrollY =
-  //       (document.documentElement.scrollHeight - window.innerHeight) / 2;
-  //     window.scrollTo(scrollX, scrollY);
-  //   };
-
-  //   centerContent();
-  //   window.addEventListener('resize', centerContent);
-
-  //   return () => {
-  //     window.removeEventListener('resize', centerContent);
-  //   };
-  // }, []);
-
   return (
-    <main className="flex flex-col items-center justify-center p-4 sm:p-4 md:p-8 lg:p-12 min-h-screen">
-      <div className="max-w-full text-center">
+    <div className="fixed inset-0 flex items-center justify-center overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        id="background-container"
+      />
+      <main className="z-10 text-center p-4">
         <h1
           className={`${monoton.className} text-[60px] sm:text-[80px] md:text-[120px] lg:text-[150px] leading-none text-center text-[#FFFFFF] mb-4 sm:mb-6 title-glow text-shadow`}
         >
@@ -49,7 +35,7 @@ export default function Home() {
           21.-25.11.2024
         </span>
         <InterestedCard />
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
