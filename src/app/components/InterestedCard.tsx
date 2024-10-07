@@ -53,14 +53,12 @@ const InterestedCard: React.FC = () => {
       <h2
         className={`${turretRoad.className} text-[60px] font-bold text-black mb-4 date-glow`}
       >
-        GAME #1
+        GAME #2
       </h2>
       <p
         className={`${turretRoad.className} text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-black mb-6 date-glow`}
       >
-        {interestedCount >= 50
-          ? 'Congratulations, you unlocked the signup together!'
-          : 'Find 50 explorers to unlock the signup!'}
+        Find 140 Explorers to take part in the games!
       </p>
       <p
         className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow`}
