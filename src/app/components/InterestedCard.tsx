@@ -65,7 +65,7 @@ const InterestedCard: React.FC = () => {
       <p
         className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow`}
       >
-        {interestedCount} / 50
+        {interestedCount} / 140
       </p>
       {interestedCount >= 50 ? (
         <a
