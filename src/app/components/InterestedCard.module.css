@@ -1,0 +1,49 @@
+@keyframes wavy {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.wavyText {
+  display: inline-block;
+}
+
+.wavyText span {
+  display: inline-block;
+  animation: wavy 1s ease-in-out infinite;
+}
+
+.wavyText span:nth-child(1) {
+  animation-delay: 0s;
+}
+.wavyText span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wavyText span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wavyText span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wavyText span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.wavyText span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.wavyText span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.wavyText span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.wavyText span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.wavyText span:nth-child(10) {
+  animation-delay: 0.9s;
+}

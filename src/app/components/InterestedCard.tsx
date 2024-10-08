@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { addInterestedPerson, getInterestedCount } from '../actions';
 import { Turret_Road } from 'next/font/google';
+import styles from './InterestedCard.module.css';
 
 const turretRoad = Turret_Road({
   weight: '400',
@@ -12,14 +13,30 @@ const turretRoad = Turret_Road({
 
 const InterestedCard: React.FC = () => {
   const [interestedCount, setInterestedCount] = useState(0);
-
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetchInterestedCount();
   }, []);
 
   const fetchInterestedCount = async () => {
-    const count = await getInterestedCount();
-    setInterestedCount(count);
+    try {
+      const count = await getInterestedCount();
+      setInterestedCount(count);
+    } catch (error) {
+      console.error('Error fetching interested count:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const renderWavyLoading = () => {
+    return (
+      <span className={styles.wavyText}>
+        {'Loading...'.split('').map((char, index) => (
+          <span key={index}>{char}</span>
+        ))}
+      </span>
+    );
   };
 
   return (
@@ -37,7 +54,7 @@ const InterestedCard: React.FC = () => {
       <p
         className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow`}
       >
-        {interestedCount} / 140
+        {isLoading ? renderWavyLoading() : `${interestedCount} / 140`}
       </p>
       <a
         href="https://tally.so/r/w5GKoo"
