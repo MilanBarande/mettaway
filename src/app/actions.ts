@@ -30,10 +30,23 @@ export async function addInterestedPerson() {
 
 export async function getInterestedCount() {
   try {
-    const response = await notion.databases.query({
-      database_id: dbId,
-    });
-    return response.results.length;
+    let allResults: any[] = [];
+    let hasMore = true;
+    let nextCursor: string | undefined;
+
+    while (hasMore) {
+      const response = await notion.databases.query({
+        database_id: dbId,
+        start_cursor: nextCursor,
+      });
+
+      allResults = allResults.concat(response.results);
+      hasMore = response.has_more;
+      nextCursor = response.next_cursor as string;
+    }
+
+    const count = allResults.length;
+    return count;
   } catch (error) {
     console.error('Failed to get interested count:', error);
     return 0;
