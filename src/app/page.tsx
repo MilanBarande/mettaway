@@ -1,7 +1,5 @@
-'use client';
-
 import { Monoton, Turret_Road } from 'next/font/google';
-import InterestedCard from './components/InterestedCard';
+import InterestedCardWrapper from './components/InterestedCardWrapper';
 
 const monoton = Monoton({
   weight: '400',
@@ -34,7 +32,7 @@ export default function Home() {
         >
           21.-25.11.2024
         </span>
-        <InterestedCard />
+        <InterestedCardWrapper />
       </main>
     </div>
   );
