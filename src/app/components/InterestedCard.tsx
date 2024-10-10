@@ -14,7 +14,7 @@ interface InterestedCardProps {
 }
 
 const InterestedCard: React.FC<InterestedCardProps> = ({ interestedCount }) => {
-  const isFullyBooked = interestedCount >= 140;
+  const isFullyBooked = true;
 
   return (
     <div className="bg-white bg-opacity-30 p-8 rounded-lg text-center">
