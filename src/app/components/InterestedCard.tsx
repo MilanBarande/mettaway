@@ -6,46 +6,51 @@ const turretRoad = Turret_Road({
   display: 'swap',
 });
 
+const SIGNUP_URL = 'https://tally.so/r/w5GKoo';
+const WAITLIST_URL = 'https://tally.so/r/wQJzaG';
+
 interface InterestedCardProps {
   interestedCount: number;
 }
 
 const InterestedCard: React.FC<InterestedCardProps> = ({ interestedCount }) => {
+  const isFullyBooked = interestedCount >= 140;
+
   return (
     <div className="bg-white bg-opacity-30 p-8 rounded-lg text-center">
       <h2
         className={`${turretRoad.className} text-[60px] font-bold text-black mb-4 date-glow`}
       >
-        GAME #2
+        {isFullyBooked ? 'SUCCESS!' : 'GAME #2'}
       </h2>
       <p
         className={`${turretRoad.className} text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] text-black mb-6 date-glow`}
       >
-        Find 140 Explorers to take part in the games!
+        {isFullyBooked
+          ? '140 explorers are ready to join the games.'
+          : 'Find 140 Explorers to take part in the games!'}
       </p>
       <p
         className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow`}
       >
-        {interestedCount >= 140
-          ? 'Success! 140 explorers are ready to join the games.'
+        {isFullyBooked
+          ? 'Join the waitlist, there is still hope.'
           : `${interestedCount} / 140`}
       </p>
-      {interestedCount < 140 && (
-        <a
-          href="https://tally.so/r/w5GKoo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`
-            ${turretRoad.className} text-[24px] font-bold
-            bg-[#E92EFB] text-white
-            px-6 py-2 rounded-full
-            hover:bg-opacity-80 transition-all duration-300
-            date-glow text-shadow inline-block
-          `}
-        >
-          Sign up
-        </a>
-      )}
+      <a
+        href={isFullyBooked ? WAITLIST_URL : SIGNUP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`
+          ${turretRoad.className} text-[24px] font-bold
+          bg-[#E92EFB] text-white
+          px-6 py-2 rounded-full
+          hover:bg-opacity-80 transition-all duration-300
+          date-glow text-shadow inline-block
+        `}
+      >
+        {isFullyBooked ? 'Waitlist' : 'Sign up'}
+      </a>
     </div>
   );
 };
