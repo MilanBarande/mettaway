@@ -24,7 +24,7 @@ const InterestedCard: React.FC<InterestedCardProps> = ({ interestedCount }) => {
         Find 140 Explorers to take part in the games!
       </p>
       <p
-        className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow min-h-[185px] min-w-[836px]`}
+        className={`${turretRoad.className} text-[32px] text-black mb-6 date-glow`}
       >
         {interestedCount >= 140
           ? 'Success! 140 explorers are ready to join the games.'
